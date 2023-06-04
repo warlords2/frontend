@@ -9,9 +9,14 @@ services:
     networks:
         - bridge_net
     volumes:
-        - ./:/app
+        - ./components:/app/components
+        - ./pages:/app/pages
+        - ./static:/app/static
+        - ./store:/app/store
+        - ./test:/app/test
     ports:
-        - "3000:8000"
+        - "3000:3000"
+        - "24678:24678"
 networks:
     bridge_net:
         driver: bridge

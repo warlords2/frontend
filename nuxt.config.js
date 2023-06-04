@@ -18,6 +18,22 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
+  server:{
+    port: process.env.FRONTEND_PORT || 3000,
+    host: '0.0.0.0',
+    hmr: {
+      protocol: 'ws',
+      host: 'localhost'
+    }
+  },
+  vite: {
+    server: {
+      hmr: {
+        protocol: 'ws',
+        host: 'localhost'
+      }
+    }
+  },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
