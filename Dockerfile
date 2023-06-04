@@ -1,0 +1,21 @@
+FROM node:18
+
+WORKDIR /app
+
+VOLUME /app
+
+COPY package.json /app/
+
+ENV FRONTEND_PORT 3000
+ENV BACKEND_HOST backend
+ENV BACKEND_PORT 4000
+
+RUN echo 'FRONTEND_PORT=${FRONTEND_PORT}' >> .env
+RUN echo 'BACKEND_HOST=${BACKEND_HOST}' >> .env
+RUN echo 'BACKEND_PORT=${BACKEND_PORT}' >> .env
+
+EXPOSE ${FRONTEND_PORT}
+
+RUN npm install
+
+CMD ["npm","run","dev"]
