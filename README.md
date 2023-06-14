@@ -1,5 +1,7 @@
 # frontend
 
+Vue UI with game engine and client structures
+
 ## Build Setup
 
 ```bash
